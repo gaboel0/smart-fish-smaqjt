@@ -2,14 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  }
-
+  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Página de login é a página inicial
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule) },
+  { path: 'tab1', loadChildren: () => import('./tab1/tab1.module').then(m => m.Tab1PageModule) },
+  
 ];
 @NgModule({
   imports: [

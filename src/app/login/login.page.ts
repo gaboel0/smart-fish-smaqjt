@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
 
   doLogin() {
     if (this.username === 'usuario' && this.password === 'senha') {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/tab1']);
     } else {
       console.log('Credenciais inválidas');
     }
