@@ -1,22 +1,36 @@
-
-.componente-personalizado {
-  background-color: #ff0000; /* Cor de fundo vermelha */
-  color: #00ff00; /* Cor do texto verde */
-  /* Outros estilos personalizados para o seu componente */
+ion-content {
+  --ion-background-color: linear-gradient(to bottom, #ffffff, #d0d0d0);
+  margin: 0;
+  padding: 0;
 }
 
-.login-button{
-  margin-top: 360px;
+ion-header {
+  --background: linear-gradient(to bottom, #ffffff, #d0d0d0);
+  margin: 0;
+  padding: 0;
+}
+
+ion-button {
+  --background: #51B1F7;
+  --color: rgb(255, 255, 255);
+  --border-color: black;
   width: 250px;
-  margin-left: auto ;
+  margin-top: 20px;
+  margin-left: auto;
   margin-right: auto;
 }
-.reset-password{
+
+.reset-password {
+  --background: transparentize(100);
+  --background-hover: #FFFFFF;
+  --color: #51B1F7;
+  text-decoration: underline;
   width: 250px;
-  margin-left: auto ;
+  margin-top: 20px;
+  margin-left: auto;
   margin-right: auto;
 }
-.title
-{
-  color: blue;
+
+.title {
+  color: #51B1F7;
 }
