@@ -1,26 +1,21 @@
-<div class="all">
+<div class="login-container">
   <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title class="title">
-        SMART-FISH
-      </ion-title>
+      <ion-title class="title">SMART-FISH</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content [fullscreen]="true">
-
     <ion-item>
       <ion-label position="floating">Usuário</ion-label>
       <ion-input type="text" [(ngModel)]="username"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
       <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
-
     <ion-button class="login-button" expand="full" (click)="doLogin()">Entrar</ion-button>
     <ion-button class="reset-password" expand="full">Esqueci a senha</ion-button>
-
   </ion-content>
-
 </div>
