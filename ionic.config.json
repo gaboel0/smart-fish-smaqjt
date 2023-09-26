@@ -1,8 +1,0 @@
-{
-  "name": "smart-fish",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular",
-  "id": "fc5c78f4"
-}
