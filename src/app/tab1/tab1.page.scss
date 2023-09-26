@@ -1,0 +1,50 @@
+ion-content {
+  --ion-background-color: linear-gradient(to bottom, #ffffff, #679CB2);
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  text-decoration: underline;
+  padding: 20px;
+  font-weight: 700;
+  color: black;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+ion-button {
+  --color: black;
+  --background: #ffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0.5rem;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ion-badge {
+  --color: black;
+  --background: #dcdcdc;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 25%;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-button:active {
+  --background: transparent;
+  --box-shadow: none;
+  --color: black;
+}
