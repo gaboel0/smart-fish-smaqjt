@@ -3,6 +3,7 @@ ion-content {
   margin: 0;
   padding: 0;
 }
+
 h2 {
   text-decoration: underline;
   padding: 20px;
@@ -47,4 +48,18 @@ ion-button:active {
   --background: transparent;
   --box-shadow: none;
   --color: black;
+}
+
+.d {
+  margin-left: 200px;
+}
+
+.down-label {
+  display: flex;
+  flex-direction: column;
+  margin-left: 13rem;
+}
+
+.down-label ion-label {
+  margin-top: 10px;
 }
