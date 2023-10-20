@@ -63,3 +63,20 @@ ion-button:active {
 .down-label ion-label {
   margin-top: 10px;
 }
+.feed-button{
+  margin: 0px;
+  font-size: 27px;
+  padding: 0px;
+  border: 0;
+  margin-left: 60px;
+  margin-right: 60px;
+  --border-radius:50% ;
+  --background: rgb(104, 104, 231);
+}
+.feed-button-text{
+  font-weight: 700;
+  color: white;
+  padding: 90px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
