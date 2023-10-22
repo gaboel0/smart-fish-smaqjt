@@ -7,16 +7,21 @@
 
   <ion-content [fullscreen]="true">
     <ion-item>
-      <ion-label position="floating">Usuário</ion-label>
+      <ion-label position="floating"></ion-label>
       <ion-input type="text" [(ngModel)]="username"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="password" [(ngModel)]="password" #passwordInput></ion-input>
+      <ion-icon slot="end" name="eye" (click)="togglePasswordVisibility(passwordInput)"></ion-icon>
+      
+
     </ion-item>
-    <ion-button class="login-button" expand="full" (click)="doLogin()">Entrar</ion-button>
-    <ion-button class="register-button" expand="full">Cadastrar nova conta</ion-button>
+    <div class="buttons">
+      <ion-button class="login-button" expand="full" (click)="doLogin()">Entrar</ion-button>
+      <ion-button class="register-button" expand="full">Cadastrar nova conta</ion-button>
+    </div>
   </ion-content>
 
 </div>

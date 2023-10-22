@@ -1,11 +1,68 @@
-
-.down-label {
+.login-container, ion-content {
+  margin-top: 50px;
+  --ion-background-color: white;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin-left: 13rem;
+  align-items: center;
+  justify-content: center;
+}
+ion-content {
+  --ion-background-color: linear-gradient(to bottom, #679CB2, #ffff);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.login-container {
+  background: linear-gradient(to bottom, #679CB2, white);
+  height: 100%;
+  margin: 0;
 }
 
-.down-label ion-label {
+ion-title {
+  --color: black;
+  margin-left: 70px;
+}
+ion-toolbar{
+  margin-top: 70px;
+  --background: transparent;
+
+}
+ion-item {
+  margin-top: 40px;
+  --background: transparent;
+}
+ion-input {
+
   margin-top: 10px;
-}
+  --color: black;
+  --background: white; /* Define o fundo dos inputs como branco */
+  border: 1px solid #606060; /* Adiciona uma borda cinza aos inputs */
+  position: relative; /* Torna o input container um contexto para o ícone */
 
+}
+ion-icon[name="eye"] {
+  color: black; /* Defina a cor desejada para o ícone "eye" */
+  position: absolute; /* Torna o ícone posicionado absolutamente em relação ao input */
+  top: 55%; /* Move o ícone para o centro vertical do input */
+  right: 20px; /* Ajusta a posição horizontal do ícone */
+  transform: translateY(-50%); /* Centraliza verticalmente o ícone no input */
+  cursor: pointer; /* Muda o cursor para um ponteiro ao passar o mouse sobre o ícone */
+  z-index: 2; /* Define a ordem de sobreposição do ícone para estar acima do input */
+
+}
+.buttons{
+  margin-top: 100px;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+ion-button.login-button{
+  border-radius: 20px !important;
+  opacity: 90%;
+}
+ion-button.register-button{
+  color: #606060;
+  --background:transparent !important;
+  text-decoration: underline !important;
+}

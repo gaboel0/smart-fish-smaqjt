@@ -1,7 +1,14 @@
 <ion-content [fullscreen]="true">
-  <ion-text>
-    <h2>Aquário de [user]</h2>
-  </ion-text>
+  <ion-toolbar>
+    <ion-text>
+      <h2>Aquário de [user]</h2>
+    </ion-text>
+    <ion-buttons slot="end">
+      <ion-button (click)="doLogout()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
   <div class="buttons">
     <ion-button>
       <strong>PH</strong>

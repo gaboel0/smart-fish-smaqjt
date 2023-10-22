@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { IonInput } from '@ionic/angular';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
   username: string = '';
   password: string = '';
+  @ViewChild('passwordInput') passwordInput: IonInput | undefined;
 
   constructor(private router: Router) { }
 
@@ -21,6 +23,13 @@ export class LoginPage implements OnInit {
       this.router.navigate(['/tab1']);
     } else {
       console.log('Credenciais inválidas');
+    }
+  }
+  togglePasswordVisibility(input: IonInput) {
+    if (input.type === 'password') {
+      input.type = 'text';
+    } else {
+      input.type = 'password';
     }
   }
 

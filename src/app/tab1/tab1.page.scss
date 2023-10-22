@@ -80,3 +80,7 @@ ion-button:active {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+ion-toolbar{
+  --background: transparent !important;
+  display: flex !important;
+}
