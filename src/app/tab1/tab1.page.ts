@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ComponentService } from '../services/services/component.service';
 import { ComponentModel } from '../models/component-model';
 import { Component } from '@angular/core';
+import { SensorService } from '../services/services/sensor.service';
+import { SensorModel } from '../models/sensor-model';
 
 
 @Component({
@@ -12,9 +14,10 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor(private router: Router, private componentService: ComponentService) {}
+  constructor(private router: Router, private componentService: ComponentService, private sensorService: SensorService) {}
   clearAuth(){
     localStorage.removeItem('token');
+
   }
 
   doLogout(){
@@ -32,6 +35,22 @@ export class Tab1Page {
       time: 2000,
     }
 
+
     console.log(this.componentService.activateServo(componentModel));
+  }
+  async lastRegistry() {
+    let sensor: SensorModel
+
+    try {
+      /*this.sensorService.lastRegistry().subscribe(
+        (data) => {
+          sensor = data
+          console.log(sensor)
+        })*/
+        const sensor = await this.sensorService.lastRegistry();
+        console.log(sensor);
+    } catch(error) {
+      console.log(error)
+    }
   }
 }
