@@ -84,3 +84,29 @@ ion-toolbar{
   --background: transparent !important;
   display: flex !important;
 }
+
+/* Adicione estas regras ao seu estilo existente */
+
+.feed-button,
+.auto-feed-button {
+  --background: rgb(104, 104, 231);
+  color: white;
+  font-weight: 700;
+  font-size: 14px; /* ajuste o tamanho da fonte conforme necessário */
+  padding: 10px; /* ajuste o espaçamento interno conforme necessário */
+  margin: 5px; /* ajuste a margem conforme necessário */
+  --border-radius: 5px; /* ajuste o raio da borda conforme necessário */
+}
+
+.feed-button:active,
+.auto-feed-button:active {
+  --background: rgba(104, 104, 231, 0.8); /* ajuste a transparência conforme necessário */
+}
+
+/* Adicione essas regras para posicionar os botões lado a lado */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se não houver espaço suficiente */
+}
+
