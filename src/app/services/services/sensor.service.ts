@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError, tap, throwError } from 'rxjs';
+import { Observable, catchError, tap } from 'rxjs';
 import { SensorModel } from 'src/app/models/sensor-model';
 
 @Injectable({
@@ -9,24 +9,28 @@ import { SensorModel } from 'src/app/models/sensor-model';
 export class SensorService {
 
   url = 'https://smart-fish-deploy-render.onrender.com/api/v1/'
-  sensor: SensorModel | undefined;
+  local = 'http://localhost:8080/api/v1/'
+
+  sensor: SensorModel = {} as SensorModel;
 
   constructor(private httpClient: HttpClient) { }
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  }
+  httpHeader  = {
+    headers: new HttpHeaders({ 
+      'Content-type': 'application/json',
+      'Access-Control-Allow-Origin': this.url,
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+     })  
+  };
+
+
   public lastRegistry(): Observable<SensorModel> {
-    return this.httpClient.get<SensorModel>(this.url + 'sensor/registry')
+    return this.httpClient.get<SensorModel>(`${this.url}sensor/registry`, this.httpHeader)
       .pipe(
-        tap(data => {
-          this.sensor = data;
-          console.log('Subscribe executed.');
-        }),
         catchError(error => {
-          console.error('Error during HTTP request:', error);
+          console.error('Erro durante a solicitação HTTP', error);
           throw error;
-        })
-      );
-  }
+        })
+      );
+  }
 }

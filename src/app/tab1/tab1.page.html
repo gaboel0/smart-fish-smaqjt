@@ -14,7 +14,7 @@
       <strong>PH</strong>
       <div class="down-label">
         <ion-badge slot="end">5</ion-badge>
-        <ion-label><strong>Ideal: 7.0</strong></ion-label>
+        <ion-label><strong>Ideal: 7.0</strong> </ion-label>
       </div>
     </ion-button>
     <ion-button>
@@ -35,12 +35,7 @@
       <strong>NTU</strong>
       <div class="down-label">
         <ion-badge slot="end">5</ion-badge>
-        <ion-label><strong> Ideal: 7.0</strong></ion-label>
-      </div>
-    </ion-button>
-    <ion-button class="feed-button" (click)="lastRegistry()">
-      <div class="feed-button-text">
-        FEED
+        <ion-label><strong> Ideal:7.0</strong></ion-label>
       </div>
     </ion-button>
     <ion-button (click)="toggleAutoFeed()" class="auto-feed-button">
@@ -48,5 +43,10 @@
         {{ autoFeedEnabled ? 'Auto Feed: ON' : 'Auto Feed: OFF' }}
       </div>
     </ion-button>
+    <ion-button class="feed-button" (click)="activate()">
+      <div class="feed-button-text">
+        FEED
+      </div>
+    </ion-button>
   </div>
-</ion-content>
+ </ion-content>
