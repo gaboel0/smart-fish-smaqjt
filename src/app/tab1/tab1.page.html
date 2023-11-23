@@ -13,28 +13,28 @@
     <ion-button>
       <strong>PH</strong>
       <div class="down-label">
-        <ion-badge slot="end">5</ion-badge>
-        <ion-label><strong>Ideal: 7.0</strong> </ion-label>
+        <ion-badge slot="end">{{dataValue['ph']}}</ion-badge>
+        <ion-label><strong>Ideal: 7</strong> </ion-label>
       </div>
     </ion-button>
     <ion-button>
-      <strong>O2</strong>
+      <strong>Water Level</strong>
       <div class="down-label">
-        <ion-badge slot="end">5</ion-badge>
+        <ion-badge slot="end">{{dataValue['temp']}}</ion-badge>
         <ion-label><strong> Ideal: 25°C</strong></ion-label>
       </div>
     </ion-button>
     <ion-button>
       <strong>C°</strong>
       <div class="down-label">
-        <ion-badge slot="end">5</ion-badge>
+        <ion-badge slot="end">{{dataValue['water_level']}}</ion-badge>
         <ion-label><strong> Ideal: 2g/Mm</strong></ion-label>
       </div>
     </ion-button>
     <ion-button>
       <strong>NTU</strong>
       <div class="down-label">
-        <ion-badge slot="end">5</ion-badge>
+        <ion-badge slot="end">{{dataValue['turbidity']}}</ion-badge>
         <ion-label><strong> Ideal:7.0</strong></ion-label>
       </div>
     </ion-button>

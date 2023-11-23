@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
   }
 
   doLogin() {
-    if (this.username === 'usuario' && this.password === 'senha') {
+    if (this.username === 'usuario' && this.password === 'senha' || this.username === 'gabrieldossantosfigueiredo@gmail.com' && this.password === 'gabriel123' || this.username === 'filipegelista@gmail.com' && this.password === 'filipe123') {
       this.router.navigate(['/tab1']);
     } else {
       console.log('Credenciais inválidas');

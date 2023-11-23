@@ -13,55 +13,15 @@ import { Subscription, firstValueFrom, interval, lastValueFrom, startWith, switc
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-// export class Tab1Page {
-
-//   constructor(private router: Router, private componentService: ComponentService, private sensorService: SensorService) {}
-//   clearAuth(){
-//     localStorage.removeItem('token');
-
-//   }
-
-//   doLogout(){
-//     this.clearAuth();
-//     this.router.navigate(['./login']);
-//   }
-
-//   async activate(){
-
-//     const componentModel:ComponentModel = {
-
-//       identifier: 'C8:F0:9E:7B:06:60',
-//       active: true,
-//       angle: 180,
-//       time: 2000,
-//     }
-
-//     try {
-//       const data = await  lastValueFrom(this.componentService.activate(componentModel));
-//       console.log(data);
-//     } catch (error) {
-//       console.error('Erro durante a solicitação HTTP:', error);
-//       throw error;
-//     }
-//   }
-
-//   async lastRegistry() {
-//     try {
-//       const data = await firstValueFrom(this.sensorService.lastRegistry());
-//       console.log(data);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   }
-// }
-
 export class Tab1Page {
-  private feedButtonClicked = false;
   autoFeedEnabled = false;
   private alive = true;
   private autoFeedSubscription: Subscription | undefined;
+  public dataValue: any;
 
-  constructor(private router: Router, private componentService: ComponentService, private sensorService: SensorService) {}
+
+
+  constructor(private router: Router, private componentService: ComponentService, private sensorService: SensorService) {this.dataValue}
 
   clearAuth(){
     localStorage.removeItem('token');
@@ -78,8 +38,8 @@ export class Tab1Page {
 
       identifier: 'C8:F0:9E:7B:06:60',
       active: true,
-      angle: 30,
-      time: 500,
+      angle: 180,
+      time: 2000,
     }
 
     try {
@@ -92,18 +52,17 @@ export class Tab1Page {
   }
 
   takeData() {
-    this.stopAutoFeed();
-
-    if (this.autoFeedEnabled) {
-      const interval$ = interval(1000)
+      const interval$ = interval(2000)
         .pipe(
           startWith(0),
-          switchMap(() => this.activate()),
+          switchMap(() => this.lastRegistry()),
           takeWhile(() => this.alive)
         );
 
-      this.autoFeedSubscription = interval$.subscribe();
-    }
+      this.autoFeedSubscription = interval$.subscribe((sensor) => {
+        console.log(sensor);
+        this.dataValue = sensor;
+      });
   }
 
   private stopAutoFeed() {
