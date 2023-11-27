@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonInput } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,24 +12,31 @@ export class LoginPage implements OnInit {
   password: string = '';
   @ViewChild('passwordInput') passwordInput: IonInput | undefined;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   doLogin() {
-    if (this.username === 'usuario' && this.password === 'senha' || this.username === 'gabrieldossantosfigueiredo@gmail.com' && this.password === 'gabriel123' || this.username === 'filipegelista@gmail.com' && this.password === 'filipe123') {
+    const trimmedUsername = this.username.trim();
+    const trimmedPassword = this.password.trim();
+
+    if (!trimmedUsername || !trimmedPassword) {
+      console.log('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    if (
+      (trimmedUsername === 'usuario' && trimmedPassword === 'senha') ||
+      (trimmedUsername === 'gabrieldossantosfigueiredo@gmail.com' && trimmedPassword === 'gabriel123') ||
+      (trimmedUsername === 'filipegelista@gmail.com' && trimmedPassword === 'filipe123')
+    ) {
       this.router.navigate(['/tab1']);
     } else {
       console.log('Credenciais inválidas');
     }
   }
-  togglePasswordVisibility(input: IonInput) {
-    if (input.type === 'password') {
-      input.type = 'text';
-    } else {
-      input.type = 'password';
-    }
-  }
 
+  togglePasswordVisibility(input: IonInput) {
+    input.type = input.type === 'password' ? 'text' : 'password';
+  }
 }

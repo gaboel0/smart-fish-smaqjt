@@ -45,42 +45,50 @@ ion-badge {
 }
 
 ion-button:active {
-  --background: transparent;
+  --background: #ffff;
   --box-shadow: none;
   --color: black;
-}
-
-.d {
-  margin-left: 200px;
 }
 
 .down-label {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-left: 13rem;
 }
 
 .down-label ion-label {
   margin-top: 10px;
 }
-.feed-button{
+
+.feed-button {
   margin: 0px;
   font-size: 27px;
   padding: 0px;
   border: 0;
   margin-left: 60px;
   margin-right: 60px;
-  --border-radius:50% ;
+  --border-radius: 50%;
   --background: rgb(104, 104, 231);
 }
-.feed-button-text{
+
+.feed-button-text {
   font-weight: 700;
   color: white;
-  padding: 90px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-ion-toolbar{
+
+ion-toolbar {
   --background: transparent !important;
   display: flex !important;
+}
+
+.level-label {
+  margin-left: -45px;
+}
+
+.ph-button strong {
+  margin-right: 20px;
 }

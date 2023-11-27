@@ -1,7 +1,7 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" #contentRef>
   <ion-toolbar>
     <ion-text>
-      <h2>Aquário de [user]</h2>
+      <h2>Bem vindo ao seu aquário</h2>
     </ion-text>
     <ion-buttons slot="end">
       <ion-button (click)="doLogout()">
@@ -10,20 +10,21 @@
     </ion-buttons>
   </ion-toolbar>
   <div class="buttons">
-    <ion-button>
+    <ion-button class="ph-button">
       <strong>PH</strong>
       <div class="down-label">
         <ion-badge slot="end">{{dataValue['ph']}}</ion-badge>
-        <ion-label><strong>Ideal: 7</strong> </ion-label>
+        <ion-label class="ideal-ph"><strong>Ideal: 7</strong> </ion-label>
       </div>
     </ion-button>
     <ion-button>
       <strong>Water Level</strong>
       <div class="down-label">
         <ion-badge slot="end">{{dataValue['temp']}}</ion-badge>
-        <ion-label><strong> Ideal: 25°C</strong></ion-label>
+        <ion-label class="level-label"><strong> Ideal: 25°C</strong></ion-label>
       </div>
     </ion-button>
+
     <ion-button>
       <strong>C°</strong>
       <div class="down-label">
